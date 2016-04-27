@@ -13,17 +13,17 @@ public class Solution {
         }
     }
 
-    public static int getHeight(Node root){
+    /*public static int getHeight(Node root){
         return getNumberOfNodes(root) - 1;
         // returns the height which is 1 less than the max length of connected nodes
-    }
+    }*/
 
     public static void printGivenLevel(Node root, int level){
         if (root == null){
             return;
         }
         if (level == 1){
-            System.out.println(root.data + "");
+            System.out.print(root.data + " ");
         }
         else if(level > 1){
             printGivenLevel(root.left, level-1);
@@ -33,7 +33,7 @@ public class Solution {
 
 
     public static void levelOrder(Node root){
-        int levelsOfBST = getHeight(root);
+        int levelsOfBST = getNumberOfNodes(root);
         for(int i = 0; i <= levelsOfBST; i++){
             printGivenLevel(root, i);
         }
